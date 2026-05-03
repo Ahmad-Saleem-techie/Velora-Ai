@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Voice Emotion — Velora AI</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="brand">Velora AI</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- INPUT CARD -->
+  <div class="card">
+    <h2 style="margin-bottom:20px;">Voice Emotion Detection</h2>
+
+    <!-- LIVE MIC -->
+    <h3 style="font-size:14px;opacity:.7;margin-bottom:10px;">🎙 Live Microphone</h3>
+    <button id="recordBtn" class="btn" onclick="toggleRecording()">🎤 Start Recording</button>
+
+    <hr style="border-color:rgba(255,255,255,.1);margin:24px 0;">
+
+    <!-- FILE UPLOAD -->
+    <h3 style="font-size:14px;opacity:.7;margin-bottom:10px;">📁 Upload Audio File</h3>
+    <input type="file" id="audioInput" accept="audio/*">
+    <button class="btn" onclick="uploadAudio()">Analyze File</button>
+  </div>
+
+  <!-- RESULT CARD -->
+  <div class="card">
+    <h3 style="margin-bottom:16px;">Detection Result</h3>
+
+    <div id="emotionBadge" class="badge">Waiting...</div>
+    <div class="progress"><span id="bar"></span></div>
+    <p id="confidenceText" style="margin-top:10px;opacity:.75;font-size:14px;"></p>
+
+    <!-- RECOMMENDATIONS -->
+    <div id="recommendationsSection">
+      <h3>Recommendations</h3>
+      <div class="rec-grid">
+        <div class="rec-card quick">
+          <h4>⚡ Quick Relief</h4>
+          <ul id="quick"></ul>
+        </div>
+        <div class="rec-card medium">
+          <h4>🌿 Short-Term</h4>
+          <ul id="medium"></ul>
+        </div>
+        <div class="rec-card deep">
+          <h4>🔥 Long-Term</h4>
+          <ul id="deep"></ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
